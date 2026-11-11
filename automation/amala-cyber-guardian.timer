@@ -1,0 +1,11 @@
+[Unit]
+Description=Run Amala Cyber Guardian every day at noon IST
+
+[Timer]
+OnCalendar=*-*-* 12:00:00 Asia/Kolkata
+AccuracySec=1min
+Persistent=true
+Unit=amala-cyber-guardian.service
+
+[Install]
+WantedBy=timers.target
