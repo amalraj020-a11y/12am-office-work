@@ -1,7 +1,8 @@
 [Unit]
-Description=Run Amala Cyber Guardian every day at noon IST
+Description=Run Amala Cyber Guardian at midnight and noon IST
 
 [Timer]
+OnCalendar=*-*-* 00:00:00 Asia/Kolkata
 OnCalendar=*-*-* 12:00:00 Asia/Kolkata
 AccuracySec=1min
 Persistent=true

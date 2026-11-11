@@ -2,9 +2,9 @@
 
 Daily autonomous cybersecurity research portfolio.
 
-## Daily 12:00 PM IST run
+## Daily 12:00 AM and 12:00 PM IST runs
 
-Amala starts at 12:00 PM India Standard Time and performs an authorization-first, low-impact research session:
+Amala starts at midnight and noon India Standard Time and performs two authorization-first, low-impact research sessions each day:
 
 1. Selects organizations worldwide across technology, entertainment, media, consumer goods, e-commerce, education, and open source.
 2. Checks official vulnerability disclosure or bug bounty rules before any testing.
@@ -31,7 +31,7 @@ If the local model is slow or unavailable, the runner records the limitation and
 - `reports/cyber-guardian/` - dated daily run reports.
 - `automation/` - the Windows scheduled runner and launcher.
 - `automation/amala_cyber_guardian.py` - passive Linux/EC2 research runner.
-- `automation/amala-cyber-guardian.timer` - daily 12:00 PM IST systemd timer.
+- `automation/amala-cyber-guardian.timer` - daily 12:00 AM and 12:00 PM IST systemd timer.
 - `12pm_office_work_inventory.xlsx` - Excel-compatible daily research ledger.
 
 ## Safety status

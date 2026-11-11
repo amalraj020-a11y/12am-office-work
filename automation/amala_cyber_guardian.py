@@ -101,9 +101,9 @@ def ollama_summary(results: list[dict]) -> tuple[str, str]:
 
 def next_day(today: str) -> Path:
     for path in sorted(PORTFOLIO.glob("Day-*")):
-        marker = path / "run.json"
-        if marker.exists() and json.loads(marker.read_text()).get("date") == today:
-            return path
+        for marker in [path / "run.json", *path.glob("run-*.json")]:
+            if marker.exists() and json.loads(marker.read_text()).get("date") == today:
+                return path
     numbers = [int(m.group(1)) for p in PORTFOLIO.glob("Day-*") if (m := re.fullmatch(r"Day-(\d+)", p.name))]
     path = PORTFOLIO / f"Day-{max(numbers, default=0) + 1:02d}"
     path.mkdir(parents=True, exist_ok=True)
@@ -130,12 +130,12 @@ def write_xlsx(rows: list[list[str]]) -> None:
             archive.writestr(name, content)
 
 
-def git_publish(today: str) -> str:
+def git_publish(today: str, session: str) -> str:
     try:
         subprocess.run(["git", "add", "README.md", "automation", "amala-cybersecurity", "reports", XSLX_NAME := XLSX.name], cwd=ROOT, check=True)
         if subprocess.run(["git", "diff", "--cached", "--quiet"], cwd=ROOT).returncode == 0:
             return "No repository changes"
-        subprocess.run(["git", "commit", "-m", f"Daily Amala Cyber Guardian report {today}"], cwd=ROOT, check=True)
+        subprocess.run(["git", "commit", "-m", f"Amala Cyber Guardian {today} {session}"], cwd=ROOT, check=True)
         subprocess.run(["git", "push", "origin", "main"], cwd=ROOT, check=True, timeout=120)
         return "Committed and pushed to GitHub"
     except Exception as exc:
@@ -145,6 +145,7 @@ def git_publish(today: str) -> str:
 def main() -> int:
     start = datetime.now(IST)
     today = start.date().isoformat()
+    session = "12AM" if start.hour < 6 else "12PM"
     REPORTS.mkdir(parents=True, exist_ok=True)
     day_dir = next_day(today)
     offset = start.toordinal() % len(PROGRAMS)
@@ -159,7 +160,7 @@ def main() -> int:
     end = datetime.now(IST)
 
     lines = [
-        f"# Amala Cyber Guardian — {today}", "", "## Session", "",
+        f"# Amala Cyber Guardian — {today} {session}", "", "## Session", "",
         f"- Started: {start.isoformat(timespec='seconds')}", f"- Finished: {end.isoformat(timespec='seconds')}",
         f"- Duration: {int((end-start).total_seconds())} seconds", "- Mode: passive policy research only; no scanning, exploitation, login, submission, or outreach", "",
         "## Paid-program shortlist", "",
@@ -194,24 +195,33 @@ def main() -> int:
         "## Awaiting approval", "", "- No external action is queued. Raj's approval is required before testing, reporting, emailing, or submitting anything.", "",
     ]
     report = "\n".join(lines)
-    report_path = REPORTS / f"{today}.md"
+    report_path = REPORTS / f"{today}-{session}.md"
     report_path.write_text(report, encoding="utf-8")
-    (day_dir / "README.md").write_text(report, encoding="utf-8")
-    (day_dir / "run.json").write_text(json.dumps({"date": today, "started": start.isoformat(), "finished": end.isoformat(), "model": model, "programs": results}, indent=2), encoding="utf-8")
+    (day_dir / f"{session}.md").write_text(report, encoding="utf-8")
+    (day_dir / f"run-{session}.json").write_text(json.dumps({"date": today, "session": session, "started": start.isoformat(), "finished": end.isoformat(), "model": model, "programs": results}, indent=2), encoding="utf-8")
+    (day_dir / "README.md").write_text(
+        f"# {day_dir.name} — {today}\n\n"
+        "Amala runs at **12:00 AM** and **12:00 PM IST**.\n\n"
+        "- [Midnight report](12AM.md)\n"
+        "- [Noon report](12PM.md)\n\n"
+        "A link may be unavailable until that session has completed.\n",
+        encoding="utf-8",
+    )
 
-    header = ["date", "organization", "sector", "region", "official_url", "http_status", "authorization_signals", "reward_evidence", "decision", "model"]
+    header = ["date", "session", "organization", "sector", "region", "official_url", "http_status", "authorization_signals", "reward_evidence", "decision", "model"]
     existing = []
     if LOG_CSV.exists():
         with LOG_CSV.open(newline="", encoding="utf-8") as handle:
             existing = list(csv.reader(handle))[1:]
-    existing = [row for row in existing if row and row[0] != today]
+    existing = [([row[0], "legacy"] + row[1:]) if len(row) == 10 else row for row in existing]
+    existing = [row for row in existing if row and not (row[0] == today and len(row) > 1 and row[1] == session)]
     for item in results:
-        existing.append([today, item["organization"], item["sector"], item["region"], item["url"], str(item["status"]), "; ".join(item["authorization_signals"]), " | ".join(item["reward_evidence"]), item["decision"], model])
+        existing.append([today, session, item["organization"], item["sector"], item["region"], item["url"], str(item["status"]), "; ".join(item["authorization_signals"]), " | ".join(item["reward_evidence"]), item["decision"], model])
     with LOG_CSV.open("w", newline="", encoding="utf-8") as handle:
         csv.writer(handle).writerows([header] + existing)
     write_xlsx([header] + existing)
-    publish = git_publish(today)
-    print(json.dumps({"status": "complete", "report": str(report_path), "day": day_dir.name, "model": model, "publish": publish}))
+    publish = git_publish(today, session)
+    print(json.dumps({"status": "complete", "report": str(report_path), "day": day_dir.name, "session": session, "model": model, "publish": publish}))
     return 0 if publish == "Committed and pushed to GitHub" or publish == "No repository changes" else 1
 
 
