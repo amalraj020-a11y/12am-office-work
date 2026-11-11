@@ -8,5 +8,5 @@ install -m 0644 "$repo/automation/amala-cyber-guardian.timer" "$units/amala-cybe
 chmod 0755 "$repo/automation/amala_cyber_guardian.py"
 systemctl --user daemon-reload
 systemctl --user enable --now amala-cyber-guardian.timer
-loginctl enable-linger ubuntu
+sudo loginctl enable-linger ubuntu
 systemctl --user status amala-cyber-guardian.timer --no-pager
