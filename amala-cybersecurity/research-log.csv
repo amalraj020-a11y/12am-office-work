@@ -1,0 +1,4 @@
+date,organization,sector,region,official_url,http_status,authorization_signals,reward_evidence,decision,model
+2026-11-12,curl,Open source,Global,https://curl.se/docs/bugbounty.html,200,scope; bounty,,Policy page observed; scope must be read and verified before any testing,qwen3:0.6b
+2026-11-12,GitHub,Developer platform,Global,https://bounty.github.com/,200,scope; bounty; eligible,,Policy page observed; scope must be read and verified before any testing,qwen3:0.6b
+2026-11-12,Meta,Social technology,Global,https://www.facebook.com/whitehat,200,scope; bounty; eligible,,Policy page observed; scope must be read and verified before any testing,qwen3:0.6b
