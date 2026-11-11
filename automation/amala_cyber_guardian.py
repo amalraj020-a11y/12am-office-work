@@ -52,12 +52,12 @@ def fetch(url: str) -> dict:
             status = response.status
             final_url = response.geturl()
         text = raw.decode("utf-8", "replace")
-        text = re.sub(r"(?is)<(script|style).*?>.*?</\\1>", " ", text)
+        text = re.sub(r"(?is)<(script|style).*?>.*?</\1>", " ", text)
         text = html.unescape(re.sub(r"(?s)<[^>]+>", " ", text))
-        text = re.sub(r"\\s+", " ", text).strip()
+        text = re.sub(r"\s+", " ", text).strip()
         lower = text.lower()
         money = []
-        for match in re.finditer(r"(?:US\\$|USD|\\$|€|£|₹)\\s?[0-9][0-9,]*(?:\\.[0-9]+)?(?:\\s*(?:-|to|–)\\s*(?:US\\$|USD|\\$|€|£|₹)?\\s?[0-9][0-9,]*)?", text, re.I):
+        for match in re.finditer(r"(?:US\$|USD|\$|€|£|₹)\s?[0-9][0-9,]*(?:\.[0-9]+)?(?:\s*(?:-|to|–)\s*(?:US\$|USD|\$|€|£|₹)?\s?[0-9][0-9,]*)?", text, re.I):
             snippet = text[max(0, match.start() - 70): min(len(text), match.end() + 100)]
             if snippet not in money:
                 money.append(snippet)
@@ -104,7 +104,7 @@ def next_day(today: str) -> Path:
         marker = path / "run.json"
         if marker.exists() and json.loads(marker.read_text()).get("date") == today:
             return path
-    numbers = [int(m.group(1)) for p in PORTFOLIO.glob("Day-*") if (m := re.fullmatch(r"Day-(\\d+)", p.name))]
+    numbers = [int(m.group(1)) for p in PORTFOLIO.glob("Day-*") if (m := re.fullmatch(r"Day-(\d+)", p.name))]
     path = PORTFOLIO / f"Day-{max(numbers, default=0) + 1:02d}"
     path.mkdir(parents=True, exist_ok=True)
     return path
