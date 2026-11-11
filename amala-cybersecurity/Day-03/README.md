@@ -2,9 +2,9 @@
 
 ## Session
 
-- Started: 2026-11-12T02:55:40+05:30
-- Finished: 2026-11-12T02:56:33+05:30
-- Duration: 53 seconds
+- Started: 2026-11-12T02:59:18+05:30
+- Finished: 2026-11-12T03:00:00+05:30
+- Duration: 42 seconds
 - Mode: passive policy research only; no scanning, exploitation, login, submission, or outreach
 
 ## Paid-program shortlist
@@ -25,15 +25,15 @@
 - HTTP verification: 200 (content hash `19d85addbc28d9c6`)
 - Written-authorization signals found: scope, bounty, eligible
 - Prohibited-test signals found: not extracted
-- Published reward evidence: No reliable reward amount extracted; consult the linked current rules
+- Published reward evidence: m gives a tip of the hat to these researchers and provides rewards of $10,000 or more in our public program, and $30,000 or more in our private program for critical vulnerabilit | rs and provides rewards of $10,000 or more in our public program, and $30,000 or more in our private program for critical vulnerabilities. If you have found a vulnerability, sub
 - Decision: Policy page observed; scope must be read and verified before any testing
 - Eligibility/scope action: open the current linked rules and confirm asset, method, account, rate-limit, residency, tax, duplicate, and disclosure requirements before any test.
 
 ### Meta — Social technology (Global)
 
 - Official/program link: https://www.facebook.com/whitehat
-- HTTP verification: 200 (content hash `9a3b67ffb6c4281b`)
-- Written-authorization signals found: scope, bounty, eligible
+- HTTP verification: 200 (content hash `8d20f4710f010600`)
+- Written-authorization signals found: bounty
 - Prohibited-test signals found: not extracted
 - Published reward evidence: No reliable reward amount extracted; consult the linked current rules
 - Decision: Policy page observed; scope must be read and verified before any testing
@@ -54,12 +54,11 @@
 ## Local-model review
 
 - Model: `qwen3:0.6b`
-- **Authorization signals**: The research identifies authorization signals such as "scope" and "bounty" in the URLs of bug bounty platforms.  
-- **Prohibited signals**: Prohibited signals include "denial of service" and "out of scope".  
-- **Reward evidence**: No explicit evidence of rewards or earnings mentioned.  
-- **Data availability**: The data includes URLs for three different organizations, each with their own authorization signals and policy requirements.  
-- **Scope and verification**: All data points suggest that authorization must be read and verified before testing.  
-- **Earnings not guaranteed**: Earnings are not guaranteed based on the provided data.
+- **Authorization signals**: "scope", "bounty"  
+- **Organization**: Curl, GitHub, and Meta  
+- **Sector**: Open source, Developer platform, Social technology  
+- **Region**: Global  
+- **Earnings**: Not guaranteed, but potential rewards are available (up to $10k and $30k) depending on the vulnerability.
 
 ## Recommended next actions
 

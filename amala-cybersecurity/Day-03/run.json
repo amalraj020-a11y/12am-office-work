@@ -1,7 +1,7 @@
 {
   "date": "2026-11-12",
-  "started": "2026-11-12T02:55:40.178823+05:30",
-  "finished": "2026-11-12T02:56:33.931554+05:30",
+  "started": "2026-11-12T02:59:18.110357+05:30",
+  "finished": "2026-11-12T03:00:00.742927+05:30",
   "model": "qwen3:0.6b",
   "programs": [
     {
@@ -38,7 +38,10 @@
         "eligible"
       ],
       "prohibited_signals": [],
-      "reward_evidence": [],
+      "reward_evidence": [
+        "m gives a tip of the hat to these researchers and provides rewards of $10,000 or more in our public program, and $30,000 or more in our private program for critical vulnerabilit",
+        "rs and provides rewards of $10,000 or more in our public program, and $30,000 or more in our private program for critical vulnerabilities. If you have found a vulnerability, sub"
+      ],
       "error": "",
       "decision": "Policy page observed; scope must be read and verified before any testing"
     },
@@ -49,11 +52,9 @@
       "url": "https://www.facebook.com/whitehat",
       "status": 200,
       "final_url": "https://bugbounty.meta.com/?utm_source=facebook.com&utm_medium=redirect",
-      "hash": "9a3b67ffb6c4281b",
+      "hash": "8d20f4710f010600",
       "authorization_signals": [
-        "scope",
-        "bounty",
-        "eligible"
+        "bounty"
       ],
       "prohibited_signals": [],
       "reward_evidence": [],
