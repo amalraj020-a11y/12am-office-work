@@ -1,0 +1,66 @@
+{
+  "date": "2026-11-12",
+  "session": "12PM",
+  "started": "2026-11-12T12:00:07.397636+05:30",
+  "finished": "2026-11-12T12:01:43.923706+05:30",
+  "model": "none",
+  "programs": [
+    {
+      "organization": "curl",
+      "sector": "Open source",
+      "region": "Global",
+      "url": "https://curl.se/docs/bugbounty.html",
+      "status": 200,
+      "final_url": "https://curl.se/dev/vuln-disclosure.html",
+      "hash": "91462d3511134e86",
+      "authorization_signals": [
+        "scope",
+        "bounty"
+      ],
+      "prohibited_signals": [
+        "denial of service",
+        "out of scope"
+      ],
+      "reward_evidence": [],
+      "error": "",
+      "decision": "Policy page observed; scope must be read and verified before any testing"
+    },
+    {
+      "organization": "GitHub",
+      "sector": "Developer platform",
+      "region": "Global",
+      "url": "https://bounty.github.com/",
+      "status": 200,
+      "final_url": "https://bounty.github.com/",
+      "hash": "19d85addbc28d9c6",
+      "authorization_signals": [
+        "scope",
+        "bounty",
+        "eligible"
+      ],
+      "prohibited_signals": [],
+      "reward_evidence": [
+        "m gives a tip of the hat to these researchers and provides rewards of $10,000 or more in our public program, and $30,000 or more in our private program for critical vulnerabilit",
+        "rs and provides rewards of $10,000 or more in our public program, and $30,000 or more in our private program for critical vulnerabilities. If you have found a vulnerability, sub"
+      ],
+      "error": "",
+      "decision": "Policy page observed; scope must be read and verified before any testing"
+    },
+    {
+      "organization": "Meta",
+      "sector": "Social technology",
+      "region": "Global",
+      "url": "https://www.facebook.com/whitehat",
+      "status": 200,
+      "final_url": "https://bugbounty.meta.com/?utm_source=facebook.com&utm_medium=redirect",
+      "hash": "65bafb8d05296751",
+      "authorization_signals": [
+        "bounty"
+      ],
+      "prohibited_signals": [],
+      "reward_evidence": [],
+      "error": "",
+      "decision": "Policy page observed; scope must be read and verified before any testing"
+    }
+  ]
+}
