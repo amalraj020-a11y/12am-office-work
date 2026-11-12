@@ -9,6 +9,7 @@ import html
 import json
 import os
 import re
+import shutil
 import subprocess
 import sys
 import time
@@ -25,6 +26,7 @@ REPORTS = ROOT / "reports" / "cyber-guardian"
 PORTFOLIO = ROOT / "amala-cybersecurity"
 LOG_CSV = PORTFOLIO / "research-log.csv"
 XLSX = ROOT / "12pm_office_work_inventory.xlsx"
+GITHUB_REPO = "https://github.com/amalraj020-a11y/12pm-office-work"
 
 # Official organization or official program-platform pages only. The runner rotates
 # three entries daily and never treats this list itself as authorization to test.
@@ -142,6 +144,43 @@ def git_publish(today: str, session: str) -> str:
         return f"GitHub push failed: {type(exc).__name__}: {exc}"
 
 
+def whatsapp_notify(today: str, session: str, results: list[dict], model: str, publish: str) -> str:
+    """Send Raj a concise run summary only when WhatsApp was explicitly configured."""
+    target = os.environ.get("AMALA_WHATSAPP_TARGET", "").strip()
+    if not target:
+        return "Not configured: set AMALA_WHATSAPP_TARGET after linking WhatsApp"
+    openclaw = os.environ.get("OPENCLAW_BIN", "").strip() or shutil.which("openclaw")
+    if not openclaw:
+        return "Failed: OpenClaw CLI was not found; set OPENCLAW_BIN"
+    if publish not in ("Committed and pushed to GitHub", "No repository changes"):
+        return "Skipped because the GitHub publication failed"
+
+    verified = sum(1 for item in results if item["status"] == 200)
+    report_url = f"{GITHUB_REPO}/blob/main/reports/cyber-guardian/{today}-{session}.md"
+    workbook_url = f"{GITHUB_REPO}/blob/main/{XLSX.name}"
+    message = (
+        f"Amala Cyber Guardian {today} {session} completed.\n"
+        f"Official programme pages reviewed: {len(results)} ({verified} reachable).\n"
+        "Active testing: none. Confirmed vulnerabilities: none. External submissions: none.\n"
+        f"Local model: {model}.\n"
+        f"Report: {report_url}\n"
+        f"Excel ledger: {workbook_url}\n"
+        "Any testing, proposal, or disclosure still requires Raj's approval."
+    )
+    try:
+        completed = subprocess.run(
+            [openclaw, "message", "send", "--channel", "whatsapp", "--target", target, "--message", message, "--json"],
+            cwd=ROOT,
+            check=True,
+            capture_output=True,
+            text=True,
+            timeout=60,
+        )
+        return "Sent" if completed.returncode == 0 else "Failed without an OpenClaw error message"
+    except Exception as exc:
+        return f"Failed: {type(exc).__name__}: {exc}"[:300]
+
+
 def main() -> int:
     start = datetime.now(IST)
     today = start.date().isoformat()
@@ -221,7 +260,8 @@ def main() -> int:
         csv.writer(handle).writerows([header] + existing)
     write_xlsx([header] + existing)
     publish = git_publish(today, session)
-    print(json.dumps({"status": "complete", "report": str(report_path), "day": day_dir.name, "session": session, "model": model, "publish": publish}))
+    whatsapp = whatsapp_notify(today, session, results, model, publish)
+    print(json.dumps({"status": "complete", "report": str(report_path), "workbook": str(XLSX), "day": day_dir.name, "session": session, "model": model, "publish": publish, "whatsapp": whatsapp}))
     return 0 if publish == "Committed and pushed to GitHub" or publish == "No repository changes" else 1
 
 

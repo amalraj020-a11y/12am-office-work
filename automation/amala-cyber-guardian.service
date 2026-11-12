@@ -6,6 +6,7 @@ Wants=network-online.target
 [Service]
 Type=oneshot
 WorkingDirectory=/home/ubuntu/12pm-office-work
+EnvironmentFile=-/home/ubuntu/.config/amala-cyber-guardian.env
 ExecStart=/usr/bin/python3 /home/ubuntu/12pm-office-work/automation/amala_cyber_guardian.py
 TimeoutStartSec=58min
 UMask=0077
