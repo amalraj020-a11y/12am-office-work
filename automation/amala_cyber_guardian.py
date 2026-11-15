@@ -26,7 +26,7 @@ REPORTS = ROOT / "reports" / "cyber-guardian"
 PORTFOLIO = ROOT / "amala-cybersecurity"
 LOG_CSV = PORTFOLIO / "research-log.csv"
 XLSX = ROOT / "12pm_office_work_inventory.xlsx"
-GITHUB_REPO = "https://github.com/amalraj020-a11y/12pm-office-work"
+GITHUB_REPO = "https://github.com/amalraj020-a11y/12am-office-work"
 
 # Official organization or official program-platform pages only. The runner rotates
 # three entries daily and never treats this list itself as authorization to test.
@@ -134,10 +134,15 @@ def write_xlsx(rows: list[list[str]]) -> None:
 
 def git_publish(today: str, session: str) -> str:
     try:
+        subprocess.run(["git", "remote", "set-url", "origin", f"{GITHUB_REPO}.git"], cwd=ROOT, check=True)
         subprocess.run(["git", "add", "README.md", "automation", "amala-cybersecurity", "reports", XSLX_NAME := XLSX.name], cwd=ROOT, check=True)
-        if subprocess.run(["git", "diff", "--cached", "--quiet"], cwd=ROOT).returncode == 0:
+        if subprocess.run(["git", "diff", "--cached", "--quiet"], cwd=ROOT).returncode != 0:
+            subprocess.run(["git", "commit", "-m", f"Amala Cyber Guardian {today} {session}"], cwd=ROOT, check=True)
+        subprocess.run(["git", "fetch", "origin", "main"], cwd=ROOT, check=True, timeout=120)
+        subprocess.run(["git", "rebase", "origin/main"], cwd=ROOT, check=True, timeout=120)
+        ahead = subprocess.check_output(["git", "rev-list", "--count", "origin/main..HEAD"], cwd=ROOT, text=True).strip()
+        if ahead == "0":
             return "No repository changes"
-        subprocess.run(["git", "commit", "-m", f"Amala Cyber Guardian {today} {session}"], cwd=ROOT, check=True)
         subprocess.run(["git", "push", "origin", "main"], cwd=ROOT, check=True, timeout=120)
         return "Committed and pushed to GitHub"
     except Exception as exc:
