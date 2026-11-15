@@ -1,8 +1,8 @@
 {
   "date": "2026-11-15",
   "session": "12PM",
-  "started": "2026-11-15T12:00:07.464426+05:30",
-  "finished": "2026-11-15T12:01:31.438900+05:30",
+  "started": "2026-11-15T12:51:02.769693+05:30",
+  "finished": "2026-11-15T12:51:54.701618+05:30",
   "model": "qwen3:0.6b",
   "programs": [
     {
@@ -12,7 +12,7 @@
       "url": "https://bughunters.google.com/about/rules/6625378258649088/google-and-alphabet-vulnerability-reward-program-vrp-rules",
       "status": 200,
       "final_url": "https://bughunters.google.com/about/rules/google-friends/google-and-alphabet-vulnerability-reward-program-vrp-rules",
-      "hash": "8134cb6a88a8506a",
+      "hash": "bcd4135fa2edef3d",
       "authorization_signals": [],
       "prohibited_signals": [],
       "reward_evidence": [],
@@ -26,7 +26,7 @@
       "url": "https://www.microsoft.com/en-us/msrc/bounty",
       "status": 200,
       "final_url": "https://www.microsoft.com/en-us/msrc/bounty",
-      "hash": "f13c7d1ce9d981c3",
+      "hash": "1a2755b835b9240f",
       "authorization_signals": [
         "safe harbor",
         "scope",
