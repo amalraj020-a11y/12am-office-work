@@ -1,0 +1,49 @@
+name: Amala Cyber Guardian cloud schedule
+
+on:
+  schedule:
+    # GitHub cron is UTC: 18:30 UTC = 00:00 IST, 06:30 UTC = 12:00 IST.
+    - cron: "30 18 * * *"
+    - cron: "30 6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: amala-cyber-guardian
+  cancel-in-progress: false
+
+jobs:
+  passive-research:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Configure Git identity
+        run: |
+          git config user.name "Amala Cyber Guardian"
+          git config user.email "amalaraj020@gmail.com"
+
+      - name: Run passive Cyber Guardian session
+        run: python automation/amala_cyber_guardian.py
+
+      - name: Upload evidence if publication fails
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cyber-guardian-diagnostics-${{ github.run_id }}
+          path: |
+            reports/cyber-guardian/
+            amala-cybersecurity/
+            12pm_office_work_inventory.xlsx
+          retention-days: 7
