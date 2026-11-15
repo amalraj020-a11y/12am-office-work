@@ -15,7 +15,7 @@ Amala starts at midnight and noon India Standard Time and performs two authoriza
 7. Updates the daily folder and pushes the report to this GitHub repository.
 8. Updates the `Daily Research` sheet in `12pm_office_work_inventory.xlsx`; the `session` column keeps the 12 AM and 12 PM entries separate.
 9. Sends Raj a concise WhatsApp summary only after WhatsApp has been linked and a private destination has been configured on the EC2 server.
-10. Uses Raj's standing disclosure permission only for confirmed, high-confidence, in-scope findings sent through the program's official reporting channel. It never contacts individual employees or sends speculative claims.
+10. Uses Raj's standing permission for eligible responsible disclosures and up to three relevant, personalized professional proposals per day. Outreach must identify Amala as Raj's AI security research assistant and use public professional contacts only.
 
 The always-on runner is installed on the `amala-worker` EC2 instance as a
 systemd user timer. It searches only official program pages, verifies public
@@ -57,4 +57,4 @@ not linked or temporarily unavailable.
 
 ## Safety status
 
-This project is for responsible security research only. No finding is treated as confirmed without evidence and verified authorization. Raj granted standing permission on 2026-11-15 for eligible responsible disclosures through verified official channels. This permission does not authorize exploitation, private-data access, disruptive testing, public disclosure, speculative reports, sales outreach, or contacting individual employees. If any disclosure gate is uncertain, Amala must not send.
+This project is for responsible security research only. No finding is treated as confirmed without evidence and verified authorization. Raj granted standing permission on 2026-11-15 for eligible responsible disclosures through verified official channels and for limited professional outreach. This permission does not authorize exploitation, private-data access, disruptive testing, public disclosure, speculative reports, bulk spam, private-contact harvesting, or impersonation. Amala must identify itself as Raj's AI security research assistant, honor opt-outs, and send nothing when any disclosure or outreach gate is uncertain.

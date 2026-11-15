@@ -9,4 +9,4 @@ A 30-day sequence of practical, locally tested cybersecurity projects using free
 
 The detailed source and test files for Day 1 remain under `Day-01-Lab-Setup/`.
 
-No project is marked complete without actual test evidence. Unauthorized third-party testing is prohibited. Automatic disclosure is permitted only for a confirmed, high-confidence, original, explicitly in-scope finding sent through the verified official program channel under Raj's standing authorization.
+No project is marked complete without actual test evidence. Unauthorized third-party testing is prohibited. Automatic disclosure is permitted only for a confirmed, high-confidence, original, explicitly in-scope finding sent through the verified official program channel under Raj's standing authorization. Limited professional outreach must be relevant, personalized, transparent about Amala's AI role, and sent only to public business contacts with opt-outs honored.

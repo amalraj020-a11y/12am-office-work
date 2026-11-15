@@ -170,7 +170,7 @@ def whatsapp_notify(today: str, session: str, results: list[dict], model: str, p
         f"Local model: {model}.\n"
         f"Report: {report_url}\n"
         f"Excel ledger: {workbook_url}\n"
-        "Standing disclosure permission is recorded, but nothing is sent unless every authorization and evidence gate passes."
+        "Standing disclosure and limited outreach permission are recorded, but nothing is sent unless every applicable gate passes."
     )
     try:
         completed = subprocess.run(
@@ -223,7 +223,7 @@ def main() -> int:
         "## Small-business help leads and proposals", "",
         "- Passive discovery produced no evidence-backed small-business candidate today. No business was labeled insecure from appearance alone.",
         "- Proposal drafts prepared: 0 of 3. A proposal is created only when a public, legitimate need and a suitable contact channel can be evidenced.",
-        "- Nothing was sent. Sales proposals and general outreach are not covered by the standing disclosure permission.", "",
+        "- Nothing was sent. Up to three personalized proposals may be sent only after a relevant public professional contact and evidence-backed need are verified. Amala must identify itself as Raj's AI security research assistant.", "",
         "## Findings and possible earnings", "",
         "- Confirmed vulnerabilities: none.", "- Unverified suspicions: none.",
         "- Possible earnings: only the official reward evidence above; actual earnings are not guaranteed and require a valid, original, in-scope report accepted by the program.", "",
