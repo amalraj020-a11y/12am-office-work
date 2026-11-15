@@ -166,11 +166,11 @@ def whatsapp_notify(today: str, session: str, results: list[dict], model: str, p
     message = (
         f"Amala Cyber Guardian {today} {session} completed.\n"
         f"Official programme pages reviewed: {len(results)} ({verified} reachable).\n"
-        "Active testing: none. Confirmed vulnerabilities: none. External submissions: none.\n"
+        "Active testing: none. Confirmed vulnerabilities: none. Eligible external submissions: none.\n"
         f"Local model: {model}.\n"
         f"Report: {report_url}\n"
         f"Excel ledger: {workbook_url}\n"
-        "Any testing, proposal, or disclosure still requires Raj's approval."
+        "Standing disclosure permission is recorded, but nothing is sent unless every authorization and evidence gate passes."
     )
     try:
         completed = subprocess.run(
@@ -223,20 +223,20 @@ def main() -> int:
         "## Small-business help leads and proposals", "",
         "- Passive discovery produced no evidence-backed small-business candidate today. No business was labeled insecure from appearance alone.",
         "- Proposal drafts prepared: 0 of 3. A proposal is created only when a public, legitimate need and a suitable contact channel can be evidenced.",
-        "- Nothing was sent. Any future proposal will be marked `AWAITING RAJ APPROVAL`.", "",
+        "- Nothing was sent. Sales proposals and general outreach are not covered by the standing disclosure permission.", "",
         "## Findings and possible earnings", "",
         "- Confirmed vulnerabilities: none.", "- Unverified suspicions: none.",
         "- Possible earnings: only the official reward evidence above; actual earnings are not guaranteed and require a valid, original, in-scope report accepted by the program.", "",
         "## Local-model review", "", f"- Model: `{model}`", summary, "",
         "## Recommended next actions", "",
-        "1. Raj may choose one shortlisted program for a manual scope review.",
+        "1. Complete a manual-quality scope review before any active validation.",
         "2. Only after its current written authorization is confirmed should Amala prepare a bounded, low-impact test plan.",
-        "3. Keep all submissions and outreach awaiting Raj's explicit approval.", "",
+        "3. Submit only a confirmed, original, high-confidence, in-scope finding through the verified official reporting channel; otherwise send nothing.", "",
         "## Tools and limitations", "",
         "- Python standard library HTTP client, HTML text extraction, SHA-256, systemd, Git, GitHub CLI credentials, and optional local Ollama Qwen.",
         "- Dynamic JavaScript pages may not expose full rules to the passive fetcher. Extracted currency text is evidence to review, not a guaranteed payout range.",
         "- Qwen3:4B is used only when installed and healthy; a smaller local Qwen fallback is recorded explicitly.", "",
-        "## Awaiting approval", "", "- No external action is queued. Raj's approval is required before testing, reporting, emailing, or submitting anything.", "",
+        "## Disclosure status", "", "- No external action is queued because this passive run produced no confirmed finding. Standing disclosure permission applies only after every documented gate passes.", "",
     ]
     report = "\n".join(lines)
     report_path = REPORTS / f"{today}-{session}.md"

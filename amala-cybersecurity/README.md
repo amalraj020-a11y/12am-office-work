@@ -9,4 +9,4 @@ A 30-day sequence of practical, locally tested cybersecurity projects using free
 
 The detailed source and test files for Day 1 remain under `Day-01-Lab-Setup/`.
 
-No project is marked complete without actual test evidence. Unauthorized third-party testing and automatic disclosure are prohibited.
+No project is marked complete without actual test evidence. Unauthorized third-party testing is prohibited. Automatic disclosure is permitted only for a confirmed, high-confidence, original, explicitly in-scope finding sent through the verified official program channel under Raj's standing authorization.

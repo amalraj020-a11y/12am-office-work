@@ -10,7 +10,7 @@ $log = Join-Path $reportDir "scheduler-$stamp.log"
 try {
   "START $stamp" | Set-Content -LiteralPath $log -Encoding UTF8
   $basePrompt = Get-Content -LiteralPath $promptPath -Raw -Encoding UTF8
-  $runPrompt = $basePrompt + "`r`n`r`nAUTOMATED RUN: Date $today. Return a concise Markdown daily report with date/duration, official policy URLs checked, passive checks, confirmed vs unverified findings, tools/models used, limitations, and next steps. Public authorization-first research only. Do not exploit, scan aggressively, log in, submit reports, or contact anyone."
+  $runPrompt = $basePrompt + "`r`n`r`nAUTOMATED RUN: Date $today. Return a concise Markdown daily report with date/duration, official policy URLs checked, passive checks, confirmed vs unverified findings, tools/models used, limitations, and next steps. Public authorization-first research only. Do not exploit, scan aggressively, or log in. Submit only a confirmed, high-confidence, original, explicitly in-scope finding through the verified official reporting channel under Raj's standing permission; otherwise contact nobody and send nothing."
   $job = Start-Job -ScriptBlock {
     param($p)
     $body = @{ model='qwen3:4b'; prompt=$p; stream=$false; think=$false; options=@{ num_predict=256 } } | ConvertTo-Json -Depth 6
