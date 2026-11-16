@@ -1,0 +1,57 @@
+{
+  "date": "2026-11-17",
+  "session": "12AM",
+  "started": "2026-11-17T00:59:09.411967+05:30",
+  "finished": "2026-11-17T00:59:10.162890+05:30",
+  "model": "none",
+  "programs": [
+    {
+      "organization": "Mozilla",
+      "sector": "Open source",
+      "region": "Global",
+      "url": "https://www.mozilla.org/en-US/security/bug-bounty/",
+      "status": 200,
+      "final_url": "https://www.mozilla.org/en-US/security/bug-bounty/",
+      "hash": "eff9f91ae36c6752",
+      "authorization_signals": [
+        "safe harbor",
+        "scope",
+        "authorized",
+        "bounty",
+        "eligible"
+      ],
+      "prohibited_signals": [],
+      "reward_evidence": [],
+      "error": "",
+      "decision": "Policy page observed; scope must be read and verified before any testing"
+    },
+    {
+      "organization": "GitLab",
+      "sector": "Open source",
+      "region": "Global",
+      "url": "https://hackerone.com/gitlab",
+      "status": 200,
+      "final_url": "https://hackerone.com/gitlab",
+      "hash": "7c203348dfae8bc1",
+      "authorization_signals": [],
+      "prohibited_signals": [],
+      "reward_evidence": [],
+      "error": "",
+      "decision": "Policy page observed; scope must be read and verified before any testing"
+    },
+    {
+      "organization": "Shopify",
+      "sector": "E-commerce",
+      "region": "Global",
+      "url": "https://hackerone.com/shopify",
+      "status": 200,
+      "final_url": "https://hackerone.com/shopify",
+      "hash": "7d2d1cff1f6c1a52",
+      "authorization_signals": [],
+      "prohibited_signals": [],
+      "reward_evidence": [],
+      "error": "",
+      "decision": "Policy page observed; scope must be read and verified before any testing"
+    }
+  ]
+}
