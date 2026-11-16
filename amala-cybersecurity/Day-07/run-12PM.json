@@ -1,0 +1,65 @@
+{
+  "date": "2026-11-16",
+  "session": "12PM",
+  "started": "2026-11-16T13:04:43.284216+05:30",
+  "finished": "2026-11-16T13:04:46.901418+05:30",
+  "model": "none",
+  "programs": [
+    {
+      "organization": "Microsoft",
+      "sector": "Technology",
+      "region": "Global",
+      "url": "https://www.microsoft.com/en-us/msrc/bounty",
+      "status": 200,
+      "final_url": "https://www.microsoft.com/en-us/msrc/bounty",
+      "hash": "c1b04d98d5095d42",
+      "authorization_signals": [
+        "safe harbor",
+        "scope",
+        "bounty"
+      ],
+      "prohibited_signals": [],
+      "reward_evidence": [
+        "bling research that improves security. Let the hunt begin! Earn up to $250,000 USD in bug bounty awards Cloud Programs Up to $100,000 USD Explore Cloud Programs Endpoint & On-Pre",
+        "in! Earn up to $250,000 USD in bug bounty awards Cloud Programs Up to $100,000 USD Explore Cloud Programs Endpoint & On-Prem Programs Up to $250,000 USD Explore Endpoint & On-Pre",
+        "$100,000 USD Explore Cloud Programs Endpoint & On-Prem Programs Up to $250,000 USD Explore Endpoint & On-Prem Programs Zero Day Quest Up to $100,000 USD Explore Zero Day Quest Re"
+      ],
+      "error": "",
+      "decision": "Policy page observed; scope must be read and verified before any testing"
+    },
+    {
+      "organization": "Mozilla",
+      "sector": "Open source",
+      "region": "Global",
+      "url": "https://www.mozilla.org/en-US/security/bug-bounty/",
+      "status": 200,
+      "final_url": "https://www.mozilla.org/en-US/security/bug-bounty/",
+      "hash": "eff9f91ae36c6752",
+      "authorization_signals": [
+        "safe harbor",
+        "scope",
+        "authorized",
+        "bounty",
+        "eligible"
+      ],
+      "prohibited_signals": [],
+      "reward_evidence": [],
+      "error": "",
+      "decision": "Policy page observed; scope must be read and verified before any testing"
+    },
+    {
+      "organization": "GitLab",
+      "sector": "Open source",
+      "region": "Global",
+      "url": "https://hackerone.com/gitlab",
+      "status": 200,
+      "final_url": "https://hackerone.com/gitlab",
+      "hash": "3bdc77543087d42a",
+      "authorization_signals": [],
+      "prohibited_signals": [],
+      "reward_evidence": [],
+      "error": "",
+      "decision": "Policy page observed; scope must be read and verified before any testing"
+    }
+  ]
+}
