@@ -1,0 +1,51 @@
+{
+  "date": "2026-11-18",
+  "session": "12PM",
+  "started": "2026-11-18T06:41:15.566566+05:30",
+  "finished": "2026-11-18T06:41:15.895938+05:30",
+  "model": "none",
+  "programs": [
+    {
+      "organization": "GitLab",
+      "sector": "Open source",
+      "region": "Global",
+      "url": "https://hackerone.com/gitlab",
+      "status": 200,
+      "final_url": "https://hackerone.com/gitlab",
+      "hash": "535286411b44ea25",
+      "authorization_signals": [],
+      "prohibited_signals": [],
+      "reward_evidence": [],
+      "error": "",
+      "decision": "Policy page observed; scope must be read and verified before any testing"
+    },
+    {
+      "organization": "Shopify",
+      "sector": "E-commerce",
+      "region": "Global",
+      "url": "https://hackerone.com/shopify",
+      "status": 200,
+      "final_url": "https://hackerone.com/shopify",
+      "hash": "0fdcf008c4ce8f8e",
+      "authorization_signals": [],
+      "prohibited_signals": [],
+      "reward_evidence": [],
+      "error": "",
+      "decision": "Policy page observed; scope must be read and verified before any testing"
+    },
+    {
+      "organization": "Automattic",
+      "sector": "Publishing",
+      "region": "Global",
+      "url": "https://hackerone.com/automattic",
+      "status": 200,
+      "final_url": "https://hackerone.com/automattic",
+      "hash": "23ab8b7e5f5db576",
+      "authorization_signals": [],
+      "prohibited_signals": [],
+      "reward_evidence": [],
+      "error": "",
+      "decision": "Policy page observed; scope must be read and verified before any testing"
+    }
+  ]
+}
