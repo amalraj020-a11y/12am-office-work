@@ -38,3 +38,6 @@ date,session,organization,sector,region,official_url,http_status,authorization_s
 2026-11-18,12PM,GitLab,Open source,Global,https://hackerone.com/gitlab,200,,,Policy page observed; scope must be read and verified before any testing,none
 2026-11-18,12PM,Shopify,E-commerce,Global,https://hackerone.com/shopify,200,,,Policy page observed; scope must be read and verified before any testing,none
 2026-11-18,12PM,Automattic,Publishing,Global,https://hackerone.com/automattic,200,,,Policy page observed; scope must be read and verified before any testing,none
+2026-11-19,12PM,Shopify,E-commerce,Global,https://hackerone.com/shopify,200,,,Policy page observed; scope must be read and verified before any testing,none
+2026-11-19,12PM,Automattic,Publishing,Global,https://hackerone.com/automattic,200,,,Policy page observed; scope must be read and verified before any testing,none
+2026-11-19,12PM,curl,Open source,Global,https://curl.se/docs/bugbounty.html,200,scope; bounty,,Policy page observed; scope must be read and verified before any testing,none
