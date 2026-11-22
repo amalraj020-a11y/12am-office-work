@@ -1,0 +1,61 @@
+{
+  "date": "2026-11-23",
+  "session": "12AM",
+  "started": "2026-11-23T05:14:52.314775+05:30",
+  "finished": "2026-11-23T05:14:56.667129+05:30",
+  "model": "none",
+  "programs": [
+    {
+      "organization": "Meta",
+      "sector": "Social technology",
+      "region": "Global",
+      "url": "https://www.facebook.com/whitehat",
+      "status": 200,
+      "final_url": "https://bugbounty.meta.com/?utm_source=facebook.com&utm_medium=redirect",
+      "hash": "2ef8ab8d46dbcfd6",
+      "authorization_signals": [
+        "bounty"
+      ],
+      "prohibited_signals": [],
+      "reward_evidence": [],
+      "error": "",
+      "decision": "Policy page observed; scope must be read and verified before any testing"
+    },
+    {
+      "organization": "Google",
+      "sector": "Technology",
+      "region": "Global",
+      "url": "https://bughunters.google.com/about/rules/6625378258649088/google-and-alphabet-vulnerability-reward-program-vrp-rules",
+      "status": 200,
+      "final_url": "https://bughunters.google.com/about/rules/google-friends/google-and-alphabet-vulnerability-reward-program-vrp-rules",
+      "hash": "1abc2f58579ccf31",
+      "authorization_signals": [],
+      "prohibited_signals": [],
+      "reward_evidence": [],
+      "error": "",
+      "decision": "Policy page observed; scope must be read and verified before any testing"
+    },
+    {
+      "organization": "Microsoft",
+      "sector": "Technology",
+      "region": "Global",
+      "url": "https://www.microsoft.com/en-us/msrc/bounty",
+      "status": 200,
+      "final_url": "https://www.microsoft.com/en-us/msrc/bounty",
+      "hash": "87d985b0e8d415f2",
+      "authorization_signals": [
+        "safe harbor",
+        "scope",
+        "bounty"
+      ],
+      "prohibited_signals": [],
+      "reward_evidence": [
+        "bling research that improves security. Let the hunt begin! Earn up to $250,000 USD in bug bounty awards Cloud Programs Up to $100,000 USD Explore Cloud Programs Endpoint & On-Pre",
+        "in! Earn up to $250,000 USD in bug bounty awards Cloud Programs Up to $100,000 USD Explore Cloud Programs Endpoint & On-Prem Programs Up to $250,000 USD Explore Endpoint & On-Pre",
+        "$100,000 USD Explore Cloud Programs Endpoint & On-Prem Programs Up to $250,000 USD Explore Endpoint & On-Prem Programs Zero Day Quest Up to $100,000 USD Explore Zero Day Quest Re"
+      ],
+      "error": "",
+      "decision": "Policy page observed; scope must be read and verified before any testing"
+    }
+  ]
+}
