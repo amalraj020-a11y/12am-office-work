@@ -1,0 +1,65 @@
+{
+  "date": "2026-11-24",
+  "session": "12AM",
+  "started": "2026-11-24T00:09:41.448418+05:30",
+  "finished": "2026-11-24T00:09:44.260955+05:30",
+  "model": "none",
+  "programs": [
+    {
+      "organization": "Google",
+      "sector": "Technology",
+      "region": "Global",
+      "url": "https://bughunters.google.com/about/rules/6625378258649088/google-and-alphabet-vulnerability-reward-program-vrp-rules",
+      "status": 200,
+      "final_url": "https://bughunters.google.com/about/rules/google-friends/google-and-alphabet-vulnerability-reward-program-vrp-rules",
+      "hash": "d81ba764818a12b9",
+      "authorization_signals": [],
+      "prohibited_signals": [],
+      "reward_evidence": [],
+      "error": "",
+      "decision": "Policy page observed; scope must be read and verified before any testing"
+    },
+    {
+      "organization": "Microsoft",
+      "sector": "Technology",
+      "region": "Global",
+      "url": "https://www.microsoft.com/en-us/msrc/bounty",
+      "status": 200,
+      "final_url": "https://www.microsoft.com/en-us/msrc/bounty",
+      "hash": "146237da95611d11",
+      "authorization_signals": [
+        "safe harbor",
+        "scope",
+        "bounty"
+      ],
+      "prohibited_signals": [],
+      "reward_evidence": [
+        "bling research that improves security. Let the hunt begin! Earn up to $250,000 USD in bug bounty awards Cloud Programs Up to $100,000 USD Explore Cloud Programs Endpoint & On-Pre",
+        "in! Earn up to $250,000 USD in bug bounty awards Cloud Programs Up to $100,000 USD Explore Cloud Programs Endpoint & On-Prem Programs Up to $250,000 USD Explore Endpoint & On-Pre",
+        "$100,000 USD Explore Cloud Programs Endpoint & On-Prem Programs Up to $250,000 USD Explore Endpoint & On-Prem Programs Zero Day Quest Up to $100,000 USD Explore Zero Day Quest Re"
+      ],
+      "error": "",
+      "decision": "Policy page observed; scope must be read and verified before any testing"
+    },
+    {
+      "organization": "Mozilla",
+      "sector": "Open source",
+      "region": "Global",
+      "url": "https://www.mozilla.org/en-US/security/bug-bounty/",
+      "status": 200,
+      "final_url": "https://www.mozilla.org/en-US/security/bug-bounty/",
+      "hash": "f0b0689401bf3345",
+      "authorization_signals": [
+        "safe harbor",
+        "scope",
+        "authorized",
+        "bounty",
+        "eligible"
+      ],
+      "prohibited_signals": [],
+      "reward_evidence": [],
+      "error": "",
+      "decision": "Policy page observed; scope must be read and verified before any testing"
+    }
+  ]
+}
