@@ -1,8 +1,8 @@
 {
   "date": "2026-11-25",
   "session": "12PM",
-  "started": "2026-11-25T08:13:20.943198+05:30",
-  "finished": "2026-11-25T08:13:22.510975+05:30",
+  "started": "2026-11-25T23:01:54.603535+05:30",
+  "finished": "2026-11-25T23:02:00.479314+05:30",
   "model": "none",
   "programs": [
     {
@@ -12,7 +12,7 @@
       "url": "https://www.microsoft.com/en-us/msrc/bounty",
       "status": 200,
       "final_url": "https://www.microsoft.com/en-us/msrc/bounty",
-      "hash": "057e0313ae57fd82",
+      "hash": "3bb17b0799fd3095",
       "authorization_signals": [
         "safe harbor",
         "scope",
@@ -54,7 +54,7 @@
       "url": "https://hackerone.com/gitlab",
       "status": 200,
       "final_url": "https://hackerone.com/gitlab",
-      "hash": "5d3072257239d170",
+      "hash": "249f331b2bf0abd5",
       "authorization_signals": [],
       "prohibited_signals": [],
       "reward_evidence": [],
