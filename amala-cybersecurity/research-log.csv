@@ -71,3 +71,6 @@ date,session,organization,sector,region,official_url,http_status,authorization_s
 2026-11-26,12PM,Mozilla,Open source,Global,https://www.mozilla.org/en-US/security/bug-bounty/,200,safe harbor; scope; authorized; bounty; eligible,,Policy page observed; scope must be read and verified before any testing,none
 2026-11-26,12PM,GitLab,Open source,Global,https://hackerone.com/gitlab,200,,,Policy page observed; scope must be read and verified before any testing,none
 2026-11-26,12PM,Shopify,E-commerce,Global,https://hackerone.com/shopify,200,,,Policy page observed; scope must be read and verified before any testing,none
+2026-11-27,12PM,GitLab,Open source,Global,https://hackerone.com/gitlab,200,,,Policy page observed; scope must be read and verified before any testing,none
+2026-11-27,12PM,Shopify,E-commerce,Global,https://hackerone.com/shopify,200,,,Policy page observed; scope must be read and verified before any testing,none
+2026-11-27,12PM,Automattic,Publishing,Global,https://hackerone.com/automattic,200,,,Policy page observed; scope must be read and verified before any testing,none
